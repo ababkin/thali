@@ -1,0 +1,47 @@
+name: thali
+version: "0.0.1"
+description: Generator for CircleCI yaml files
+maintainer: Alex Babkin
+stability: experimental
+license: MIT
+
+default-extensions:
+  - NoImplicitPrelude
+  - OverloadedStrings
+
+extra-source-files:
+  - README.md
+
+library:
+  source-dirs:
+    - library
+  exposed-modules:
+    - Thali.Types
+  dependencies:
+    - base 
+    - protolude 
+    - dhall
+
+executables:
+  thali:
+    main: Main.hs
+    source-dirs: cli
+    dependencies:
+      - base 
+      - optparse-applicative 
+      - thali 
+      - protolude 
+      - dhall
+
+        
+tests:
+  tasty:
+    main: Test.hs
+    source-dirs: tests
+    dependencies:
+      - base 
+      - protolude 
+      - tasty
+      - tasty-ant-xml 
+      - tasty-hspec
+      - tasty-quickcheck
