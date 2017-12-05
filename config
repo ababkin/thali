@@ -1,0 +1,11 @@
+{ jobs = [
+        { jobName = "dummyJob" 
+        , jobImage =  { image = "us.gcr.io/development-148212/ci-ops:v0.2.0"
+                      , auth = [] : Optional ./Auth 
+                      }
+        , otherImages = [] : List ./DockerImage
+        , parallelism = [+2] : Optional Natural
+        , steps = [] : List ./Step
+        }
+      ]
+}

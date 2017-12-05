@@ -21,7 +21,7 @@ dispatch
   :: Options
   -> IO ()
 dispatch _opts = do
-  x <- input auto "./config.dhl"
+  x <- input auto "./config"
   print (x :: CircleConfig)
 
 

@@ -1,0 +1,5 @@
+< RunShell : ./ShellCommand 
+| SetupRemoteDocker : { dockerVersion : Text } 
+| StoreArtifacts : ./ArtifactSpec 
+>
+
